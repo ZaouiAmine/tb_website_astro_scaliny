@@ -1,0 +1,89 @@
+---
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+---
+
+<section id="hero" class="min-h-screen flex flex-col items-center justify-center py-16 relative" style="background-color: #0F1419;">
+	<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+		<!-- Left: Text & Action -->
+		<div>
+			<!-- Pill Badge -->
+			<Badge class="mb-4 md:mb-6">
+				<div class="w-2 h-2 rounded-full animate-pulse inline-block mr-2" style="background-color: #31906A;"></div>
+				Performance Marketing Agency
+			</Badge>
+			
+			<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+				Where Data Meets Creativity to <span style="color:rgb(60, 179, 131);">Scale Your Business</span>
+			</h1>
+			<p class="text-gray-300 text-base sm:text-lg mb-6 md:mb-8">
+				Performance marketing and conversion systems tailored for the Algerian market. We transform data into creative strategies that drive real growth.
+			</p>
+			
+			<!-- Buttons -->
+			<div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 mb-6 md:mb-8">
+				<Button>
+					Free Strategy Call
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+					</svg>
+				</Button>
+				<Button variant="outline">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 0 1 0 1.971l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+					</svg>
+					See Our Results
+				</Button>
+			</div>
+			
+			<!-- Separator -->
+			<div class="mb-8">
+				<div class="h-px bg-gray-700 w-full"></div>
+			</div>
+			
+			<!-- Stats -->
+			<div class="flex flex-wrap items-start gap-4 md:gap-8">
+				<div class="text-left">
+					<div class="text-2xl md:text-3xl font-bold text-white mb-1">150+</div>
+					<div class="text-gray-400 text-xs md:text-sm">Projects</div>
+				</div>
+				<div class="text-left">
+					<div class="text-2xl md:text-3xl font-bold text-white mb-1">8.2x</div>
+					<div class="text-gray-400 text-xs md:text-sm">ROAS</div>
+				</div>
+				<div class="text-left">
+					<div class="text-2xl md:text-3xl font-bold text-white mb-1">50+</div>
+					<div class="text-gray-400 text-xs md:text-sm">Partners</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Right: Visuals -->
+		<div class="relative mt-8 lg:mt-0">
+			<!-- Main Graphic -->
+			<div class="relative">
+				<img src="/assets/images/hero-abstract.png" alt="Abstract 3D tech-focused graphic" class="w-full h-auto rounded-2xl" style="box-shadow: 0 0 30px rgba(49, 144, 106, 0.4);" />
+				
+				<!-- Floating Card -->
+				<div class="absolute -bottom-3 md:-bottom-6 -right-3 md:-right-6 bg-gray-900 border border-gray-700 rounded-lg px-3 md:px-6 py-2 md:py-4 shadow-2xl opacity-80 animate-pulse">
+					<div class="flex items-center gap-1 md:gap-2">
+						<span class="text-xs md:text-sm text-gray-400">Growth Rate</span>
+						<span class="text-lg md:text-2xl font-bold" style="color: #31906A;">+127%</span>
+					</div>
+				</div>
+				
+				<!-- Logo Symbol -->
+				<div class="absolute -top-3 md:-top-6 -left-3 md:-left-6 animate-bounce">
+					<img src="/assets/images/scaliny-icon.png" alt="Scaliny Icon" class="w-16 h-16 md:w-24 md:h-24" />
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Scroll Indicator -->
+	<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white opacity-70">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+		</svg>
+	</div>
+</section>
