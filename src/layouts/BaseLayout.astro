@@ -2,9 +2,17 @@
 interface Props {
 	title?: string;
 	description?: string;
+	image?: string;
 }
 
-const { title = 'SCALINY - Performance Marketing Agency', description = 'Performance marketing and conversion systems tailored for the Algerian market.' } = Astro.props;
+const { 
+	title = 'SCALINY - Performance Marketing Agency', 
+	description = 'Performance marketing and conversion systems tailored for the Algerian market.',
+	image = '/favicon.svg'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scaliny.com');
+const imageURL = new URL(image, canonicalURL).href;
 ---
 
 <!doctype html>
@@ -14,10 +22,42 @@ const { title = 'SCALINY - Performance Marketing Agency', description = 'Perform
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="description" content={description} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imageURL} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={imageURL} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Resource Hints -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		
+		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "SCALINY",
+			"description": description,
+			"url": canonicalURL.origin,
+			"logo": new URL("/favicon.svg", canonicalURL).href
+		})} />
 	</head>
 	<body class="antialiased">
 		<slot />

@@ -1,5 +1,7 @@
 ---
 import Badge from '../ui/Badge.astro';
+import { Image } from 'astro:assets';
+import agencyWorkspaceImage from '../../assets/images/agency-workspace.png';
 ---
 
 <section id="about" class="py-16 md:py-20 px-4 md:px-6" style="background-color: #FBFBFC;">
@@ -7,7 +9,15 @@ import Badge from '../ui/Badge.astro';
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
 			<!-- Left Side: Visuals -->
 			<div class="relative">
-				<img src="/assets/images/agency-workspace.png" alt="Professional office environment" class="w-full h-auto rounded-2xl shadow-lg" />
+				<Image
+					src={agencyWorkspaceImage}
+					alt="Professional office environment"
+					width={800}
+					height={600}
+					format="webp"
+					loading="lazy"
+					class="w-full h-auto rounded-2xl shadow-lg"
+				/>
 				<!-- Floating Badge -->
 				<div class="absolute -bottom-4 -right-4 bg-white rounded-lg px-4 py-3 shadow-xl border border-gray-200">
 					<div class="text-sm font-bold text-gray-900">5+ Years of Experience</div>

@@ -1,6 +1,9 @@
 ---
 import Button from '../ui/Button.astro';
 import Badge from '../ui/Badge.astro';
+import { Image } from 'astro:assets';
+import heroAbstract from '../../assets/images/hero-abstract.png';
+import scalinyIcon from '../../assets/images/scaliny-icon.png';
 ---
 
 <section id="hero" class="min-h-screen flex flex-col items-center justify-center py-16 relative" style="background-color: #0F1419;">
@@ -62,7 +65,16 @@ import Badge from '../ui/Badge.astro';
 		<div class="relative mt-8 lg:mt-0">
 			<!-- Main Graphic -->
 			<div class="relative">
-				<img src="/assets/images/hero-abstract.png" alt="Abstract 3D tech-focused graphic" class="w-full h-auto rounded-2xl" style="box-shadow: 0 0 30px rgba(49, 144, 106, 0.4);" />
+				<Image
+					src={heroAbstract}
+					alt="Abstract 3D tech-focused graphic"
+					width={800}
+					height={600}
+					format="webp"
+					loading="eager"
+					class="w-full h-auto rounded-2xl"
+					style="box-shadow: 0 0 30px rgba(49, 144, 106, 0.4);"
+				/>
 				
 				<!-- Floating Card -->
 				<div class="absolute -bottom-3 md:-bottom-6 -right-3 md:-right-6 bg-gray-900 border border-gray-700 rounded-lg px-3 md:px-6 py-2 md:py-4 shadow-2xl opacity-80 animate-pulse">
@@ -74,7 +86,15 @@ import Badge from '../ui/Badge.astro';
 				
 				<!-- Logo Symbol -->
 				<div class="absolute -top-3 md:-top-6 -left-3 md:-left-6 animate-bounce">
-					<img src="/assets/images/scaliny-icon.png" alt="Scaliny Icon" class="w-16 h-16 md:w-24 md:h-24" />
+					<Image
+						src={scalinyIcon}
+						alt="Scaliny Icon"
+						width={96}
+						height={96}
+						format="webp"
+						loading="eager"
+						class="w-16 h-16 md:w-24 md:h-24"
+					/>
 				</div>
 			</div>
 		</div>
