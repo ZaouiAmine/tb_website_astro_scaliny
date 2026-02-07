@@ -43,6 +43,15 @@ const imageURL = new URL(image, canonicalURL).href;
 		<!-- Resource Hints -->
 		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 		
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5LMG9PNH1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-G5LMG9PNH1');
+		</script>
+		
 		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
