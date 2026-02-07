@@ -7,8 +7,8 @@ interface Props {
 
 const { 
 	title = 'SCALINY - Performance Marketing Agency', 
-	description = 'Performance marketing and conversion systems tailored for the Algerian market.',
-	image = '/favicon.svg'
+	description = 'Performance marketing and conversion systems tailored for worldwide markets.',
+	image = '/assets/images/scaliny-icon.jpg'
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scaliny.com');
@@ -53,8 +53,8 @@ const imageURL = new URL(image, canonicalURL).href;
 		</script>
 		
 		<!-- Favicons -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/jpeg" href="/assets/images/scaliny-icon.jpg" />
+		<link rel="icon" href="/assets/images/scaliny-icon.jpg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
@@ -65,7 +65,7 @@ const imageURL = new URL(image, canonicalURL).href;
 			"name": "SCALINY",
 			"description": description,
 			"url": canonicalURL.origin,
-			"logo": new URL("/favicon.svg", canonicalURL).href
+			"logo": new URL("/assets/images/scaliny-icon.jpg", canonicalURL).href
 		})} />
 	</head>
 	<body class="antialiased">

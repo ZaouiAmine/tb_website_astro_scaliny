@@ -4,45 +4,92 @@ import { Image } from 'astro:assets';
 import scalinyLogo from '../assets/images/scaliny logo.png';
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-2 transition-all duration-300" style="background-color: transparent;">
-	<div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-4">
+<nav 
+	id="navbar" 
+	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
+	style="background-color: transparent; backdrop-filter: blur(0px);"
+>
+	<div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+		<!-- Logo -->
 		<div class="flex-shrink-0">
-			<a href="#hero">
+			<a href="#hero" aria-label="SCALINY Home" class="block">
 				<Image
 					id="navbar-logo"
 					src={scalinyLogo}
 					alt="SCALINY Logo"
-					width={200}
 					height={80}
 					format="webp"
 					loading="eager"
-					class="h-10 md:h-14 transition-all duration-300 hover:scale-110 cursor-pointer"
-					style="width: auto; height: 100%; object-fit: contain;"
+					class="h-10 w-auto transition-all duration-300 hover:opacity-80"
+					style="object-fit: contain;"
 				/>
 			</a>
 		</div>
 		
 		<!-- Desktop Navigation -->
-		<ul class="hidden lg:flex items-center gap-8 flex-1 justify-center">
-			<li><a href="#services" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300">Services</a></li>
-			<li><a href="#results" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300">Results</a></li>
-			<li><a href="#about" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300">About</a></li>
-			<li><a href="#testimonials" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300">Testimonials</a></li>
-			<li><a href="#contact" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300">Contact</a></li>
-		</ul>
+		<nav class="hidden lg:flex items-center flex-1 justify-center" aria-label="Main navigation">
+			<ul class="flex items-center gap-8">
+				<li>
+					<a 
+						href="#services" 
+						class="nav-link text-white hover:text-[#31906A] transition-colors duration-200 text-sm font-medium tracking-wide"
+					>
+						Services
+					</a>
+				</li>
+				<li>
+					<a 
+						href="#results" 
+						class="nav-link text-white hover:text-[#31906A] transition-colors duration-200 text-sm font-medium tracking-wide"
+					>
+						Results
+					</a>
+				</li>
+				<li>
+					<a 
+						href="#about" 
+						class="nav-link text-white hover:text-[#31906A] transition-colors duration-200 text-sm font-medium tracking-wide"
+					>
+						About
+					</a>
+				</li>
+				<li>
+					<a 
+						href="#testimonials" 
+						class="nav-link text-white hover:text-[#31906A] transition-colors duration-200 text-sm font-medium tracking-wide"
+					>
+						Testimonials
+					</a>
+				</li>
+				<li>
+					<a 
+						href="#contact" 
+						class="nav-link text-white hover:text-[#31906A] transition-colors duration-200 text-sm font-medium tracking-wide"
+					>
+						Contact
+					</a>
+				</li>
+			</ul>
+		</nav>
 		
 		<!-- Desktop CTA Button -->
 		<div class="hidden lg:flex flex-shrink-0">
 			<Button>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
 				</svg>
-				Free Consultation
+				Consultation
 			</Button>
 		</div>
 		
 		<!-- Mobile Hamburger Button -->
-		<button id="mobile-menu-button" class="lg:hidden p-2 hamburger-icon" style="color: white;">
+		<button 
+			id="mobile-menu-button" 
+			class="lg:hidden p-2 -mr-2 text-white hover:text-[#31906A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#31906A] focus:ring-offset-2 focus:ring-offset-transparent rounded-md"
+			aria-label="Toggle mobile menu"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+		>
 			<svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 hamburger-icon">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 			</svg>
@@ -53,22 +100,90 @@ import scalinyLogo from '../assets/images/scaliny logo.png';
 	</div>
 	
 	<!-- Mobile Menu -->
-	<div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-50 flex items-center justify-center" style="background-color: #0F1419;">
-		<ul class="flex flex-col items-center gap-6 px-4 w-full">
-			<li><a href="#services" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300 text-xl font-semibold">Services</a></li>
-			<li><a href="#results" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300 text-xl font-semibold">Results</a></li>
-			<li><a href="#about" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300 text-xl font-semibold">About</a></li>
-			<li><a href="#testimonials" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300 text-xl font-semibold">Testimonials</a></li>
-			<li><a href="#contact" class="nav-link text-white hover:text-[#31906A] transition-colors duration-300 text-xl font-semibold">Contact</a></li>
-			<li class="w-full max-w-xs mt-4">
-				<Button class="w-full">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+	<div 
+		id="mobile-menu" 
+		class="hidden lg:hidden fixed inset-0 z-40 bg-[#0F1419] transition-all duration-300 ease-in-out"
+		aria-label="Mobile navigation"
+		role="dialog"
+		aria-modal="true"
+	>
+		<div class="flex flex-col h-full">
+			<!-- Mobile Menu Header -->
+			<div class="flex items-center justify-between px-4 sm:px-6 h-16 border-b border-gray-800">
+				<Image
+					src={scalinyLogo}
+					alt="SCALINY Logo"
+					height={80}
+					format="webp"
+					loading="eager"
+					class="h-10 w-auto filter brightness-0 invert"
+					style="object-fit: contain;"
+				/>
+				<button 
+					id="mobile-close-button"
+					class="p-2 text-white hover:text-[#31906A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#31906A] rounded-md"
+					aria-label="Close mobile menu"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 					</svg>
-					Free Consultation
-				</Button>
-			</li>
-		</ul>
+				</button>
+			</div>
+			
+			<!-- Mobile Menu Content -->
+			<nav class="flex-1 overflow-y-auto py-8" aria-label="Mobile navigation">
+				<ul class="flex flex-col items-center gap-1 px-4">
+					<li class="w-full">
+						<a 
+							href="#services" 
+							class="nav-link block text-white hover:text-[#31906A] hover:bg-gray-800 transition-all duration-200 text-base font-medium py-3 px-4 rounded-lg text-center"
+						>
+							Services
+						</a>
+					</li>
+					<li class="w-full">
+						<a 
+							href="#results" 
+							class="nav-link block text-white hover:text-[#31906A] hover:bg-gray-800 transition-all duration-200 text-base font-medium py-3 px-4 rounded-lg text-center"
+						>
+							Results
+						</a>
+					</li>
+					<li class="w-full">
+						<a 
+							href="#about" 
+							class="nav-link block text-white hover:text-[#31906A] hover:bg-gray-800 transition-all duration-200 text-base font-medium py-3 px-4 rounded-lg text-center"
+						>
+							About
+						</a>
+					</li>
+					<li class="w-full">
+						<a 
+							href="#testimonials" 
+							class="nav-link block text-white hover:text-[#31906A] hover:bg-gray-800 transition-all duration-200 text-base font-medium py-3 px-4 rounded-lg text-center"
+						>
+							Testimonials
+						</a>
+					</li>
+					<li class="w-full">
+						<a 
+							href="#contact" 
+							class="nav-link block text-white hover:text-[#31906A] hover:bg-gray-800 transition-all duration-200 text-base font-medium py-3 px-4 rounded-lg text-center"
+						>
+							Contact
+						</a>
+					</li>
+					<li class="w-full max-w-sm mt-4">
+						<Button class="w-full">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+							</svg>
+							Consultation
+						</Button>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
 </nav>
 

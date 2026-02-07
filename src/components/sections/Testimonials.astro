@@ -4,40 +4,10 @@ import Badge from '../ui/Badge.astro';
 
 const testimonials = [
 	{
-		name: 'Ahmed B.',
-		role: 'CEO, TechSolutions DZ',
-		text: 'Lead generation increased by 300% in 4 months. SCALINY\'s data-driven approach transformed our marketing strategy.',
-		initial: 'A'
-	},
-	{
-		name: 'Yasmine K.',
-		role: 'Founder, Fashion Store',
-		text: 'Optimized our COD funnel and achieved 10x more orders. Their understanding of the Algerian market is unmatched.',
-		initial: 'Y'
-	},
-	{
-		name: 'Karim M.',
-		role: 'Marketing Director, Real Estate',
-		text: 'SCALINY built complete systems for growth. From strategy to execution, they delivered results that exceeded our expectations.',
-		initial: 'K'
-	},
-	{
-		name: 'Nadia R.',
-		role: 'Owner, Beauty Brand',
-		text: 'Tripled our engagement rates through their video content strategy. The creative team understands our brand perfectly.',
-		initial: 'N'
-	},
-	{
-		name: 'Sofiane H.',
-		role: 'CEO, B2B Services',
-		text: 'Generated 50+ qualified leads in the first month. Their B2B expertise and LinkedIn strategy delivered immediate results.',
-		initial: 'S'
-	},
-	{
-		name: 'Lina D.',
-		role: 'E-commerce Manager',
-		text: 'Transparent reporting and quick responses. The team is always available and keeps us informed every step of the way.',
-		initial: 'L'
+		name: 'Taziri',
+		role: 'School Supply Company',
+		text: 'Working with SCALINY has transformed our business. Their strategic approach and data-driven campaigns helped us reach new customers and significantly grow our sales. The team is professional, responsive, and truly understands our market needs.',
+		initial: 'T'
 	}
 ];
 ---
@@ -56,7 +26,7 @@ const testimonials = [
 		</div>
 		
 		<!-- Testimonial Grid -->
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
 			{testimonials.map((testimonial) => (
 				<Card class="relative">
 					<div class="flex items-start justify-between mb-4">
